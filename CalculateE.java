@@ -57,11 +57,12 @@ public class CalculateE {
         executor.shutdown();
         while(!executor.isTerminated()) { }
 
-        long end =  Calendar.getInstance().getTimeInMillis();;
         for(int i = 0; i < workers.length; i++){
             final_result = final_result.add(workers[i].getResult());
         }
-
+        
+        long end =  Calendar.getInstance().getTimeInMillis();;
+        
         try(PrintWriter out = new PrintWriter(fileName)) {
             out.println(final_result);
         }catch(FileNotFoundException e) {
