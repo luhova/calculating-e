@@ -52,7 +52,6 @@ public class WorkerThread implements Runnable {
     private BigDecimal calc_nth_member(int k){
         BigDecimal num = BigDecimal.valueOf(Math.pow(3*k, 2) + 1);
         BigDecimal denom = factorial(BigDecimal.valueOf(3*k));
-        result = num.divide(denom, 15, RoundingMode.CEILING);
-        return result;
+        return num.divide(denom, 15, RoundingMode.CEILING);
     }
 }
